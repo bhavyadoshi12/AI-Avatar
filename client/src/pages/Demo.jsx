@@ -36,7 +36,7 @@ export default function Demo() {
         setIsLoading(true);
         setDebug('Initializing secure connection...');
         try {
-            const response = await fetch('http://localhost:5000/get-access-token', {
+            const response = await fetch('https://ai-avatar-backend-9opc.onrender.com/get-access-token', {
                 method: 'POST',
             });
             const { token } = await response.json();
@@ -97,7 +97,7 @@ export default function Demo() {
         setDebug(`Processing...`);
 
         try {
-            const response = await fetch('http://localhost:5000/chat', {
+            const response = await fetch('https://ai-avatar-backend-9opc.onrender.com/chat', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ text: textToSend })
